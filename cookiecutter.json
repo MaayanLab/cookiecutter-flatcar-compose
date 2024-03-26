@@ -1,0 +1,14 @@
+{
+  "filename": "flatcar-config",
+  "ssh_authorized_keys": "",
+  "duckdns_domain": "",
+  "duckdns_token": "",
+  "letsencrypt_email": "",
+  "__prompts__": {
+    "filename": "Select output filename",
+    "ssh_authorized_keys": "Insert authorized public key",
+    "duckdns_domain": "Provide domain name registered with https://duckdns.org",
+    "duckdns_token": "Provide token registered with https://duckdns.org",
+    "letsencrypt_email": "Insert your email for letsencrypt notifications"
+  }
+}
