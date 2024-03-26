@@ -99,9 +99,9 @@ storage:
             - "traefik.http.routers.web.entrypoints=web"
 {%- if cookiecutter.duckdns_domain %}
             - "traefik.http.routers.websecure.rule=Host(`{{ cookiecutter.duckdns_domain }}.duckdns.org`)"
-            - "traefik.http.routers.websecure.tls=true"
-{%- else %}
-            - "traefik.http.routers.websecure.rule=PathPrefix(`/`)"
             - "traefik.http.routers.websecure.tls.certresolver=letsencrypt"
+{%- else %}
+            - "traefik.http.routers.websecure.tls=true"
+            - "traefik.http.routers.websecure.rule=PathPrefix(`/`)"
 {%- endif %}
             - "traefik.http.routers.websecure.entrypoints=websecure"
