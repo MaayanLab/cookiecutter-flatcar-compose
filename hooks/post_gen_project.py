@@ -1,4 +1,3 @@
-import os
 import sys
 import pathlib
 import subprocess
@@ -10,7 +9,7 @@ cookiecutter_path.parent.rmdir()
 print(f"Translate {file_path.name} with butane to {file_path.stem}.ignition.json? [Y/n]")
 if input().lower() in {'','y'}:
   subprocess.run(
-    f'docker run --rm -i quay.io/coreos/butane:latest < "{file_path}" > "{file_path.with_suffix(".ignition.json")}"',
+    f'docker run --rm -i quay.io/coreos/butane:latest < "{file_path}" | tee "{file_path.with_suffix(".ignition.json")}"',
     shell=True,
     cwd=file_path.parent,
     stdin=sys.stdin,
